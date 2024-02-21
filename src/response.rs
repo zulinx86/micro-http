@@ -145,9 +145,6 @@ impl ResponseHeaders {
         buf.write_all(self.server.as_bytes())?;
         buf.write_all(&[CR, LF])?;
 
-        buf.write_all(b"Connection: keep-alive")?;
-        buf.write_all(&[CR, LF])?;
-
         self.write_allow_header(buf)?;
         self.write_deprecation_header(buf)?;
 
